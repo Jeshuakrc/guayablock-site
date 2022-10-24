@@ -1,14 +1,25 @@
 module.exports = {
-  siteMetadata: {
-    title: `guayablock-site`,
-    siteUrl: `https://www.yourdomain.tld`
-  },
-  plugins: ["gatsby-transformer-remark", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+    siteMetadata: {
+      title: `guayablock-site`,
+      siteUrl: `https://guayablock.com`
     },
-    __key: "pages"
-  }]
+    plugins: [ 
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "images",
+        "path": "./src/images/"
+      },
+    },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/layouts/MainLayout.js`),
+      }
+    },
+    "gatsby-transformer-remark",
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`
+  ]
 };

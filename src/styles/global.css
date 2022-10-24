@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+
+:root {
+    --layout-color: #008e40;
+    --layout-text-color: white;
+    --layout-enphasis-color: #ff348c;
+
+    --bammer-border-color: #ebd64c;
+
+    --navbar-height: 64px;
+}
+
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    background-image: url(../images/background-tile.png);
+    background-repeat: repeat;
+    background-size: 25vh;
+}
