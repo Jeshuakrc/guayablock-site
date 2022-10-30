@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326.09 37.91">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .3em;
+      }
+
+      .cls-2 {
+        fill: #e1ce50;
+        font-family: RussoOne-Regular, 'Russo One';
+        font-size: 33.58px;
+      }
+
+      .cls-3 {
+        letter-spacing: .3em;
+      }
+
+      .cls-4 {
+        letter-spacing: .28em;
+      }
+
+      .cls-5 {
+        letter-spacing: .22em;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(0 28.54)"><tspan class="cls-3" x="0" y="0">G</tspan><tspan class="cls-4" x="33.58" y="0">U</tspan><tspan class="cls-5" x="68.17" y="0">AY</tspan><tspan class="cls-1" x="129.28" y="0">ABLOCK</tspan></text>
+</svg>

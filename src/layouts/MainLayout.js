@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { Link } from 'gatsby';
+import { StaticImage } from "gatsby-plugin-image";
 import "../styles/global.css";
 import "../styles/layout.css";
 import "../styles/page.css";
 
 import BannerImage from '../components/BannerImage';
 
-function MainLayout({ children }) {
+export const layoutContext = createContext(null);
+
+export default function({ children, location }) {
+
+    const [ isNavBarCollapsed, setNavBarCollapsed ] = useState(false);
+    const [ showHome, setShowHome ] = useState(true);
+    const toggleCollapsed = () => {
+        setNavBarCollapsed(!isNavBarCollapsed);
+    }
+
+    useEffect(() => console.log("re-rendering layout"));
+
+    const context = {
+        navBar: {
+            setCollabsed: setNavBarCollapsed,
+            setShowHome: setShowHome,
+            toggleCollapsed: toggleCollapsed
+        }
+    }
+
     return (
         <div className='global-container'>
-            <nav className='navbar'>
+            <nav className={`${(isNavBarCollapsed) ? "collapsed " : ""}navbar`}>
+                <StaticImage className='navbar-logo' src='../images/logo.png' alt='logo' />
                 <ul>
                     <li>
                         <Link to='/'>Inicio</Link>
@@ -30,11 +51,11 @@ function MainLayout({ children }) {
             </nav>
             <BannerImage />
             <main className='page-container'>
-                { children }
+                <layoutContext.Provider value={context}>
+                    { children }
+                </layoutContext.Provider>
             </main>
             <footer className='footer'></footer>
         </div>
     );
 }
-
-export default MainLayout;

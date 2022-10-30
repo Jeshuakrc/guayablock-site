@@ -4,10 +4,13 @@
     --layout-color: #008e40;
     --layout-text-color: white;
     --layout-enphasis-color: #ff348c;
+    --layout-enphasis-gradient: linear-gradient(200deg, rgb(240, 17, 92) 5%, var(--layout-enphasis-color) 100%);
 
     --bammer-border-color: #ebd64c;
 
     --navbar-height: 64px;
+    --navbar-height-collapsed: calc(var(--navbar-height) * 0.3);
+    --navbar-animation-timme: 0.3s;
 }
 
 body {

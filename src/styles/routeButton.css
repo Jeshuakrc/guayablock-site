@@ -1,0 +1,8 @@
+.route-button {
+    background: var(--layout-enphasis-gradient);
+    color: white;
+    text-decoration: none;
+    padding: 16px 28px;
+    border-radius: 28px;
+    font-size: 20px;
+}

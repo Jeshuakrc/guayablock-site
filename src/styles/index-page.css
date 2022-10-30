@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+.index-page .heading {
+
+}
+
+.index-page .title {
+    display: flex;
+    margin: 5% 0 0 0;
+    width: 100%;
+}
+
+.index-page .title > img {
+    width: 30%;
+    margin-left: -8%;
+}
+
+.index-page .title h1 {
+    display: inline-block;
+    margin: 10% -8% 0 5%;
+    margin-top: 10%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 50px;
+}
+
+.index-page .inex-page-links {
+    display: flex;
+    justify-content: center;
+    margin: 80px 0;
+    padding: 0 8%;
+    gap: calc(28px + 4%);
+}
+
+.index-page .display {
+    height: 3000px;
+}
