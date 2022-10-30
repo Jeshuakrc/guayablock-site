@@ -32,6 +32,7 @@
     margin: 80px 0;
     padding: 0 8%;
     gap: calc(28px + 4%);
+    flex-wrap: wrap;
 }
 
 .index-page .display {
@@ -44,7 +45,7 @@
     }
 }
 
-@media(max-width: 800px) {
+@media (max-aspect-ratio: 7/10) {
     .index-page .title {
         flex-direction: column;
         align-items: center;
@@ -53,16 +54,25 @@
     .index-page .title h1 {
         width: 80%;
         margin: 0;
-        font-size: 30px;
+        margin-top: 10%;
+        font-size: 20px;
         background-color: rgba(var(--layout-emphasis-color-rgb), 0.6);
-        padding: 36px;
+        padding: 10%;
         border-radius: 50px;
     }
 
     .index-page .title > img {
-        width: 45%;
+        width: 60%;
         margin: 0;
         margin-top: 15%;
-        margin-bottom: 10%;
+    }
+
+    .index-page .inex-page-links a {
+        font-size: 25px;
+    }
+
+    .index-page .inex-page-links {
+        margin: 40px 0;
+        gap: 10px;
     }
 }

@@ -21,7 +21,7 @@
     }
 }
 
-@media(max-width: 800px) {
+@media (max-aspect-ratio: 7/10) {
     .page {
         grid-template-columns: 100%;
 
