@@ -2,12 +2,16 @@
 
 :root {
     --layout-color: #008e40;
+    --layout-secondary-color: #DCE414;
     --layout-text-color: white;
     --layout-enphasis-color: #ff348c;
     --layout-emphasis-color-rgb: 255, 52, 140;
     --layout-enphasis-gradient: linear-gradient(200deg, rgb(240, 17, 92) 5%, var(--layout-enphasis-color) 100%);
 
     --bammer-border-color: #ebd64c;
+    --code-background-color: #FBF6D9;
+    --code-color: #BF7026;
+    --italic-color: #A0A257;
 
     --navbar-height: 64px;
     --navbar-height-collapsed: calc(var(--navbar-height) * 0.3);

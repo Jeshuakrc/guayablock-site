@@ -12,7 +12,10 @@ function Index(props) {
     const collapse = () => context.navBar.setCollabsed(window.scrollY < 600);
     collapse();
     window.addEventListener("scroll", collapse);
-    return () => window.removeEventListener("scroll", collapse);
+    return () => {
+      window.removeEventListener("scroll", collapse);
+      context.navBar.setCollabsed(false);
+    };
   })
 
   return (

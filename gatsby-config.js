@@ -12,9 +12,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "images",
+        "path": "./content"
+      },
+    },
+    {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: require.resolve(`./src/layouts/MainLayout.js`),
+        component: require.resolve(`./src/layouts/MainLayout.jsx`),
       }
     },
     "gatsby-transformer-remark",
