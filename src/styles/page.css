@@ -85,6 +85,19 @@
 
     .page .heading > h1 {
         font-size: 60px;
+        margin-left: 4%;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .page {
+        grid-template-columns: 100%;
+    }
+
+    .page .heading > h1 {
+        font-size: 45px;
+        margin-left: 4%;
     }
 
 }
