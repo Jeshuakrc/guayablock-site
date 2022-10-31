@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: min(calc(1200px + 10vw), 100vw);
     grid-template-rows: max-content auto;
+    justify-items: center;
 }
 
 .page .heading {
