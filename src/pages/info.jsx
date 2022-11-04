@@ -1,9 +1,10 @@
 import { graphql } from 'gatsby';
 import React from 'react';
+import renderMarkdown from '../utils/renderMarkdown';
 
 export default function info(props) {
 
-    const { html, frontmatter } = props.data.markdownRemark;
+    const { htmlAst, frontmatter } = props.data.markdownRemark;
 
     return (
         <div className='page info-page'>
@@ -11,7 +12,8 @@ export default function info(props) {
                 <h1>{ frontmatter.title }</h1>
             </div>
 
-            <div className='display' dangerouslySetInnerHTML={{ __html: html}}>
+            <div className='display'>
+                { renderMarkdown(htmlAst) }
             </div>
         </div>
     );
@@ -24,7 +26,7 @@ query MyQuery {
         title
         slug
       }
-      html
+      htmlAst
     }
   }
 `;

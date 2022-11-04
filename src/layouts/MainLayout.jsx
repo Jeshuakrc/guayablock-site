@@ -17,8 +17,6 @@ export default function({ children, location }) {
         setNavBarCollapsed(!isNavBarCollapsed);
     }
 
-    useEffect(() => console.log("re-rendering layout"));
-
     const context = {
         navBar: {
             setCollabsed: setNavBarCollapsed,

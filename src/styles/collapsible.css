@@ -1,0 +1,33 @@
+.collapsible {
+    overflow: hidden;
+    border-radius: 24px;
+    border: 2px solid var(--layout-color);
+    transition: 0.3s;
+}
+
+.collapsible .collapsible-head {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-content:center;
+    padding: 8px 24px;
+    background-color: var(--layout-color);
+    color: white;
+    height: 28px;
+}
+
+.collapsible img {
+    height: 20px;
+    width: 20px;
+}
+
+.collapsible h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.collapsible .collapsible-content {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+}
