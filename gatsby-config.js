@@ -24,6 +24,7 @@ module.exports = {
         component: require.resolve(`./src/layouts/MainLayout.jsx`),
       }
     },
+    "gatsby-plugin-react-svg",
     "gatsby-transformer-remark",
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,

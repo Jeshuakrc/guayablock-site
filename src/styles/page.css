@@ -44,7 +44,7 @@
 }
 
 .page .display strong {
-    color: #8C7B10;
+    color: var(--strong-color);
 }
 
 .page .display p > code {
@@ -58,15 +58,14 @@
 }
 
 .page .display > ul li {
-    background-color: #EFDF72;
-    color: #B49F14;
     padding: 12px;
+    border: 2px solid var(--layout-color);
     border-radius: 12px;
     margin: 12px 0;
 }
 
 .page .display > ul li em {
-    color: #FEFCF2;
+    color: var(--em-color);
 }
 
 .page .display :first-child {

@@ -1,6 +1,7 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import "../styles/collapsible.css";
 import React, { useState, useRef, useEffect } from 'react';
+import Arrow from "../images/arrow.svg"
 
 export default function({ children, title }) {
 
@@ -15,12 +16,14 @@ export default function({ children, title }) {
     });
 
     return (
-        <div ref={ths} className="collapsible" onClick={() => setCollapsed(!isCollapsed)}>
-            <div ref={head} className='collapsible-head'>
+        <div ref={ths} className="collapsible">
+            <div ref={head} className="collapsible-head" onClick={() => setCollapsed(!isCollapsed)}>
                 <h2>{ title }</h2>
-                <StaticImage src='../images/collapsible-down.png' alt='collapse-expand' />
+                <button className='collapsible-button'>
+                    <Arrow />
+                </button>
             </div>
-            <div ref={content} className='collapsible-content'>
+            <div ref={content} className="collapsible-content">
                 { children }
             </div>
         </div>

@@ -12,6 +12,8 @@
     --code-background-color: #FBF6D9;
     --code-color: #BF7026;
     --italic-color: #A0A257;
+    --strong-color: #005225;
+    --em-color: #E1A368;
 
     --navbar-height: 64px;
     --navbar-height-collapsed: calc(var(--navbar-height) * 0.3);
