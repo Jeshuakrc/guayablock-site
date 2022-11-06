@@ -16,9 +16,13 @@
 
 .collapsible .collapsible-button {
     cursor: pointer;
-    width: max(12%, 100px);
+    align-self: center;
+    height: 28px;
+    width: max(8%, 56px);
     background-color: var(--layout-color);
     border: none;
+    border-radius: 16px;
+    margin-right: 5px;
 }
 
 .collapsible img {
@@ -29,7 +33,7 @@
 .collapsible h2 {
     width: 100%;
     margin: 0;
-    padding: 4px 0 8px 24px;
+    padding: 4px 24px 8px 24px;
     font-size: 20px;
 }
 
@@ -40,6 +44,6 @@
 }
 
 .collapsible svg {
-    height: 12px;
+    height: 40%;
     color: white;
 }
