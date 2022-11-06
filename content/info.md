@@ -23,14 +23,56 @@ Al jugar en GuayaBlock, has de tener en cuenta, asumir y entender que:
 
 # FAQs
 
-<collapsible title="¿Para cuando los mods?">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium elementum dui id rutrum. Quisque quis neque laoreet, lacinia tellus a, sodales tortor. Sed aliquam a diam at molestie. Sed porta, nisl sit amet faucibus vestibulum, erat nisi imperdiet enim, a porta dolor nunc ac ipsum. Vivamus accumsan nibh ante, et molestie orci eleifend ac. Integer sit amet magna eros. Aliquam pretium sem ac libero finibus suscipit. Nulla sit amet vehicula lacus. Praesent accumsan eleifend lectus eu molestie. In ipsum dui, dapibus non neque ac, sagittis lobortis nulla. Donec ullamcorper, libero vitae posuere hendrerit, nisl nisi ullamcorper lacus, et pellentesque metus nulla non ex.
+<collapsible title="¿Qué son y cómo funcionan las cuentas?">
 
-Fusce eu enim eros. Morbi pellentesque viverra vulputate. Vivamus ut nunc lobortis, consequat mi cursus, pretium est. Aenean volutpat eget ex at tincidunt. Etiam urna lectus, pellentesque in tempor in, tincidunt commodo tellus. Duis eleifend laoreet neque, tristique placerat erat aliquet non. Aenean venenatis nisl quis ligula tincidunt, eu consequat odio dictum. Maecenas quis tortor sit amet velit lobortis ultricies non at mauris.
+Guayablock es un servidor no-premium, por lo que clientes de Java, no-oficiales, modificados y piratas pueden conectarse; con el fin de que más gente pueda jugar. Esto implica que, desde Java Edition, los usuarios no son validados contra la base de datos de Mojag, por lo que cualquier jugador puede ponerse el nombre de usuario que le plazca, incluso tomar el nombre de usuario de un jugador ya existente o el de un administrador. Por esta razón, las cuentas de usuario son verificadas con una contraseña, no por Mojang, sino por *AccWarden*, el plugin the seguridad.
 
-In vel ullamcorper tellus, vitae vulputate orci. Praesent posuere interdum est. Vivamus efficitur ac arcu eu consectetur. Nulla vel ligula quis augue varius viverra. Duis nisi sem, dictum et viverra quis, pellentesque a augue. Vivamus ligula ligula, rutrum vel tellus id, gravida congue mi. Sed a tellus fermentum velit tincidunt malesuada. Donec rutrum ante id nisi laoreet, quis convallis ligula consectetur. Suspendisse porttitor dui felis, maximus suscipit purus consequat a. Etiam hendrerit, mi quis suscipit posuere, massa ligula cursus sem, a dictum nisi dui a velit. In imperdiet justo sed massa tincidunt, ac vehicula eros rhoncus. Curabitur tempus posuere eros nec laoreet. Praesent eu ante dictum, convallis nulla vitae, auctor quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam faucibus velit sit amet neque varius, at hendrerit sapien maximus.
+Consulta [Tutoriales](/tutorials) para información sobre cómo registrarte e iniciar sesión, y en cómo esto afecta a los jugadores de Bedrock.
 
-Integer interdum eros semper ante vulputate, in condimentum mi faucibus. Nulla placerat lorem at rhoncus feugiat. Proin faucibus turpis dolor, ut dictum lacus cursus sit amet. Maecenas in nulla eu ligula rutrum gravida. Curabitur porta lacinia mi id volutpat. Aliquam vehicula, urna id varius scelerisque, turpis tellus porttitor lacus, non mattis urna mauris eu enim. Aenean faucibus magna vel elementum imperdiet. Fusce ut bibendum nulla, sed eleifend arcu. Sed finibus mi sed ante cursus mollis. Etiam faucibus mi justo, eu efficitur magna viverra quis. Praesent vestibulum mi et metus consequat tincidunt. Integer in tortor id libero suscipit porttitor ut sed risus. Vestibulum enim ligula, commodo in neque in, sagittis auctor dolor. Cras faucibus tellus vitae augue rutrum congue. Praesent in porttitor mauris, id luctus lacus.
-
-Curabitur faucibus nec justo vel volutpat. Vivamus ullamcorper dui pharetra interdum porta. Aliquam cursus augue in felis pharetra facilisis. In accumsan feugiat neque eu imperdiet. Nulla molestie dui in ligula tempor, feugiat porta risus pulvinar. Aenean sed dolor eu eros venenatis suscipit. Vestibulum auctor convallis dui. Donec euismod finibus ligula, non malesuada augue mollis eu. Suspendisse dignissim velit nec viverra dignissim. Proin condimentum lorem nec mauris semper, eu congue orci lobortis.
 </collapsible>
+<collapsible title="¿Qué versión de Minecraft necesito?">
+
+La última versión de Minecraft disponible. Guayablock siempre se mantendrá up-to-date en cuanto a la versión del juego; sin embargo, es posible que transcurran unos días desde que una nueva versión es lanzada hasta que el servidor se mueva a esta, debido a la dependencia sobre Spigot, PaperMC, GeyserMC y Floodgate, cada uno debe actualizarse antes de poder migrar.
+
+Consulta [Noticias](/news) para saber cuando el server se actualizó.
+
+</collapsible>
+<collapsible title="¿Habrá world resets?">
+
+No sin la aprobación de la mayoría de jugadores. El Guayablock debe ofrecer la confianza de jugar sin el temor a perder tu progreso.
+
+</collapsible> 
+<collapsible title="¿Para cuando los mods?">
+
+Para nunca xd. La diferencia entre un mod y un plugin, es que los mods modifican el cliente. Para implementar mods, cada jugador debería conectarse desde un cliente Forge, con exactamente los mismos mods instalados, esto no beneficiaría a equipos de bajos recursos, e imposibilitaría la conexión a través de Bedrock.
+
+</collapsible>
+<collapsible title="¿Cómo funciona el cross platform entre Bedrock y Java?">
+
+Un servidor proxy está en medio, recibe el tráfico de Bedrock y lo "traduce" a un "lenguaje" que es servidor Java puede entender. Todo esto gracias al proyecto *GeyserMC*. Es esperable que la experiencia desde Bedrock sea algo más lenta y laggy.
+
+</collapsible>
+<collapsible title="¿Cómo juego con la misma cuenta desde Bedrock y desde Java?">
+
+Usa el mismo nombre de usuario en ambos. La cuenta será la misma.
+
+</collapsible> 
+<collapsible title="¿Cual es la seed del mundo?">
+
+Clasificado. No conviene que cualquiera que el mundo pueda ser generado y explorado fuera del servidor.
+
+</collapsible>
+<collapsible title="¿Qué son los Totems y las Regiones?">
+
+Cómo lidiar con el griefing es un dilema de muchos servidores survival; los más anárquicos no hacen nada al respecto, y los jugadores optan por simplemente construir donde nadie encuentre sus bases, otros implementan plugins de protección de terreno, este es el caso de GuayaBlock.
+
+*LandLords* es el plugin que te permite hacer tuyo un trozo del mundo. A través de la construcción de un **totem**, se te otorgará una región, que puedes hacer más grande alimentando al totem con diamantes. Otros jugadores no podrán romper o poner bloques en tu región, entre otras restricciones. Puedes darle permiso a otros jugadores de formar parte de tu región a través de **escrituras**.
+
+Consulta [Tutoriales](/tutorials) para una guía de uso de *LandLords*.
+
+</collapsible>
+<collapsible title="¡Aiua! Perdí mis cosas">
+
+Las perdiste debido a un error del servidor o algo ajeno a tu control, puedes consultarlo con un admin. De lo contrario, get gud.
+
+</collapsible> 

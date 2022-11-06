@@ -65,7 +65,7 @@
     margin: 12px 0;
 }
 
-.page .display > ul li em {
+.page .display em {
     color: var(--em-color);
 }
 
@@ -85,6 +85,7 @@
     }
 
     .page .heading > h1 {
+        margin-top: 108px;
         font-size: 60px;
         margin-left: 4%;
     }
@@ -98,7 +99,6 @@
 
     .page .heading > h1 {
         font-size: 45px;
-        margin-left: 4%;
     }
 
 }

@@ -3,6 +3,7 @@
     border-radius: 24px;
     border: 2px solid var(--layout-color);
     transition: 0.3s;
+    margin: 12px;
 }
 
 .collapsible .collapsible-head {
