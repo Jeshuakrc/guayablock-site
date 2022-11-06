@@ -28,22 +28,24 @@ export default function({ children, location }) {
     return (
         <div className='global-container'>
             <nav className={`${(isNavBarCollapsed) ? "collapsed " : ""}navbar`}>
-                <StaticImage className='navbar-logo' src='../images/logo.png' alt='logo' />
+                <Link className='navbar-logo' to="/">
+                    <StaticImage src='../images/logo.png' alt='logo' />
+                </Link>
                 <ul>
                     <li>
                         <Link to='/'>Inicio</Link>
                     </li>
                     <li>
-                        <Link to='info'>Info</Link>
+                        <Link to='/info'>Info</Link>
                     </li>
                     <li>
-                        <Link to='tutorials'>Tutoriales</Link>
+                        <Link to='/tutorials'>Tutoriales</Link>
                     </li>
                     <li>
-                        <Link to='rules'>Reglas</Link>
+                        <Link to='/rules'>Reglas</Link>
                     </li>
                     <li>
-                        <Link to='news'>Noticias</Link>
+                        <Link to='/news'>Noticias</Link>
                     </li>
                 </ul>
             </nav>

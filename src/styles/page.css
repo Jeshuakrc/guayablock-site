@@ -5,6 +5,10 @@
     justify-items: center;
 }
 
+.page ::marker {
+    color: var(--layout-enphasis-color);
+}
+
 .page .heading {
     width: 100%;
     filter: drop-shadow( 3px 5px 8px rgba(0, 0, 0, 0.6));
@@ -71,6 +75,46 @@
 
 .page .display :first-child {
     margin-top: 0;
+}
+
+.page .display > ol > li{
+    padding: 0;
+    border: 2px solid var(--layout-color);
+    border-radius: 12px;
+    margin: 12px;
+}
+
+.page .display > ol > ::marker{
+    font-size: 24px;
+    background-color: var(--layout-enphasis-color);
+    color: var(--layout-enphasis-color);
+}
+
+.page .display > ol > ::before{
+    height: 40px;
+    background-color: var(--layout-enphasis-color);
+}
+
+.page .display > ol > li h2{
+    background-color: var(--layout-color);
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    padding: 8px;
+    border-radius: 8px 8px 0 0;
+}
+
+.page .display > ol > li h2{
+    background-color: var(--layout-color);
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    padding: 8px;
+}
+
+.page .display > ol > li p,
+.page .display > ol > li li{
+    margin: 12px;
 }
 
 @media(max-width: 1700px) {

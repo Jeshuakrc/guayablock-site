@@ -9,7 +9,6 @@ export default function({ children, title }) {
     const head = useRef(null);
     const content = useRef(null);
     const ths = useRef(null);
-    const getHeight = () => head.current.clientHeight + (isCollapsed ? 0 : content.current.clientHeight) + "px";
     
     useEffect(() => {
         ths.current.style.height = head.current.clientHeight + (isCollapsed ? 0 : content.current.clientHeight) + "px"

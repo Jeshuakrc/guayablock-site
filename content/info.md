@@ -73,6 +73,6 @@ Consulta [Tutoriales](/tutorials) para una guía de uso de *LandLords*.
 </collapsible>
 <collapsible title="¡Aiua! Perdí mis cosas">
 
-Las perdiste debido a un error del servidor o algo ajeno a tu control, puedes consultarlo con un admin. De lo contrario, get gud.
+Si las perdiste debido a un error del servidor o algo ajeno a tu control, puedes consultarlo con un admin. De lo contrario, get gud.
 
 </collapsible> 

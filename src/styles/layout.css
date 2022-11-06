@@ -13,7 +13,7 @@
     background-color: var(--layout-color);
     height: var(--navbar-height);
     font-size: 24px;
-    width: 100%;
+    width: 100vw;
     transition: var(--navbar-animation-timme);
 }
 

@@ -17,13 +17,14 @@
 
 .collapsible .collapsible-button {
     cursor: pointer;
-    align-self: center;
+    align-self: flex-end;
     height: 28px;
     width: max(8%, 56px);
     background-color: var(--layout-color);
     border: none;
-    border-radius: 16px;
+    border-radius: 24px;
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .collapsible img {
