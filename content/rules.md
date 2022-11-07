@@ -27,7 +27,7 @@ El estilo de moderación de Guayablock no es estricto ni pretende ser invasivo a
     Comentarios despectivos y discriminativos sobre la sexualidad, etnia, nacionalidad, sexo o estatus económico hacia un jugador, un externo o minoría están prohibidos. Aquí no se incita al odio.
 
 6. ## Acoso sexual
-    En case de que haga falta aclararlo, acoso sexual = BAN.
+    En caso de que haga falte aclararlo, acoso sexual = BAN.
 
 7. ## Regiones públicas
     Las **regiones públicas** del servidor, tales como el spawn, o cualquiera que pueda surgir, son sagradas; y aunque están debidamente protegidas, cualquier intención de vandalismo, como cercar sus fronteras, imposibilitar el acceso, o de alguna forma destruirlas se considera como daño a la propiedad. Cualquier estructura que con estas intenciones será destruida sin la reposición de los materiales, y si el comportamiento se prolonga, BAN. 

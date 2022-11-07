@@ -1,0 +1,50 @@
+ol {
+    counter-reset: item-count;
+}
+
+.list-item {
+    margin: 12px;
+    border-radius: 24px;
+    border: 2px solid var(--layout-color);
+    overflow: hidden;
+}
+
+.simple-list-item {
+    padding: 12px;
+}
+
+.list-item .list-item-heading {
+    display: flex;
+    border-bottom: 3px solid var(--layout-color);
+}
+
+.list-item .list-item-heading h2 {
+    margin: 6px 24px 8px 24px;
+    font-size: 20px;
+    color: var(--layout-color);
+}
+
+.list-item .list-item-heading::before {
+    text-align: center;
+    line-height: 28px;
+    counter-increment: item-count;
+    background-color: var(--layout-enphasis-color);
+    width: 28px;
+    border-radius: 9px;
+    align-self: center;
+    margin-left: 24px;
+    content: counter(item-count);
+    color: white;
+    font-weight: 800;
+}
+
+.list-item .list-item-content {
+    padding: 16px;
+    border-radius: 24px;
+}
+
+.list-item .list-item-content > p, .simple-list-item > p  {
+    margin: 0;
+    border-radius: 24px;
+}
+

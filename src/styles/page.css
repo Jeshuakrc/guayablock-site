@@ -5,8 +5,9 @@
     justify-items: center;
 }
 
-.page ::marker {
-    color: var(--layout-enphasis-color);
+.page ul, .page ol {
+    list-style: none;
+    padding: 0;
 }
 
 .page .heading {
@@ -58,69 +59,12 @@
     padding: 0 4px;
 }
 
-.page .display > ul {
-    list-style: none;
-}
-
-.page .display > ul li {
-    padding: 12px;
-    border: 2px solid var(--layout-color);
-    border-radius: 12px;
-    margin: 12px 0;
-}
-
 .page .display em {
     color: var(--em-color);
 }
 
-.page .display :first-child {
+.page .display > :first-child {
     margin-top: 0;
-}
-
-.page .display > ol > li{
-    padding: 0;
-    border: 2px solid var(--layout-color);
-    border-radius: 12px;
-    margin: 12px;
-}
-
-.page .display > ol > ::marker{
-    font-size: 24px;
-    background-color: var(--layout-enphasis-color);
-    color: var(--layout-enphasis-color);
-}
-
-.page .display > ol > ::before{
-    height: 40px;
-    background-color: var(--layout-enphasis-color);
-}
-
-.page .display > ol > li h2{
-    background-color: var(--layout-color);
-    font-size: 20px;
-    color: white;
-    margin: 0;
-    padding: 8px;
-    border-radius: 8px 8px 0 0;
-}
-
-.page .display > ol > li h2{
-    background-color: var(--layout-color);
-    font-size: 20px;
-    color: white;
-    margin: 0;
-    padding: 8px;
-}
-
-.page .display > ol > li p,
-.page .display > ol > li li{
-    margin: 12px;
-}
-
-@media(max-width: 1700px) {
-    .page {
-        grid-template-columns: 80vw;
-    }
 }
 
 @media (max-width: 800px) {
