@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image";
+import MenuIcon from "../images/menuIcon.svg";
 import "../styles/global.css";
 import "../styles/layout.css";
 import "../styles/page.css";
@@ -31,7 +32,8 @@ export default function({ children, location }) {
                 <Link className='navbar-logo' to="/">
                     <StaticImage src='../images/logo.png' alt='logo' />
                 </Link>
-                <ul>
+                <MenuIcon className="navbar-mobile-menu"/>
+                <ul className='navbar-descktop-navlist'>
                     <li>
                         <Link to='/'>Inicio</Link>
                     </li>
