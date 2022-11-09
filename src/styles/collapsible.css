@@ -15,18 +15,6 @@
     border-bottom: 4px solid var(--layout-color);
 }
 
-.collapsible .collapsible-button {
-    cursor: pointer;
-    align-self: flex-end;
-    height: 28px;
-    width: max(8%, 56px);
-    background-color: var(--layout-color);
-    border: none;
-    border-radius: 24px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
-
 .collapsible img {
     height: 20px;
     width: 20px;
@@ -45,7 +33,10 @@
     box-sizing: border-box;
 }
 
-.collapsible svg {
-    height: 40%;
-    color: white;
+.collapsible .collapsible-head svg {
+    height: 12px;
+    align-self: center;
+    margin-right: 24px;
+    color: var(--layout-color);
+    transition: 0.3s;
 }

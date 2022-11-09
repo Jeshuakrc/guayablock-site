@@ -18,9 +18,7 @@ export default function({ children, title }) {
         <div ref={ths} className="collapsible">
             <div ref={head} className="collapsible-head" onClick={() => setCollapsed(!isCollapsed)}>
                 <h2>{ title }</h2>
-                <button className='collapsible-button'>
-                    <Arrow />
-                </button>
+                <Arrow style={{ rotate: (isCollapsed) ? "0deg" : "180deg" }}/>
             </div>
             <div ref={content} className="collapsible-content">
                 { children }
