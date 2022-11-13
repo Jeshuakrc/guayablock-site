@@ -2,19 +2,24 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React, { useContext, useEffect } from 'react';
 import RouteButton from '../components/RouteButton';
 import { layoutContext } from '../layouts/MainLayout';
+import { NavDisplay } from '../components/Navbar';
 import "../styles/index-page.css"
 
 function Index(props) {
 
-  const context = useContext(layoutContext);
+  const { navbar } = useContext(layoutContext);
+
 
   useEffect(() => {
-    const collapse = () => context.navBar.setCollabsed(window.scrollY < 600);
+    const collapse = () => {
+      if (navbar.display === NavDisplay.expanded) { return; }
+      navbar.setDisplay((window.scrollY < 600) ? NavDisplay.collapsed : NavDisplay.normal);
+    } 
     collapse();
     window.addEventListener("scroll", collapse);
     return () => {
       window.removeEventListener("scroll", collapse);
-      context.navBar.setCollabsed(false);
+      navbar.setDisplay(NavDisplay.normal);
     };
   })
 
