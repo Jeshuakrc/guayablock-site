@@ -4,7 +4,6 @@
     top:0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin: 0;
     padding: 0 4%;
     background-color: var(--layout-color);
@@ -15,24 +14,15 @@
     transition-property: height, padding, top;
 }
 
-.navbar .navbar-logo {
-    position: relative;
-    --image-size: calc(var(--navbar-height) * 0.8); 
-    height: var(--image-size);
-    width: var(--image-size);
-    transition: var(--navbar-animation-timme);
-}
-
 .navbar .navbar-descktop-navlist {
+    margin: 0;
     display: flex;
-    height: 100%;
     flex-direction: row;
     list-style: none;
     transition: var(--navbar-animation-timme);
 }
 
 .navbar .navbar-descktop-navlist li {
-    height: 100%;
     display: grid;
     align-items: center;
 }
@@ -56,8 +46,16 @@
 }
 
 .navbar .navbar-mobile-menu {
-    height: 28px;
     color: var(--bammer-border-color);
-    display: none;
-    transition: var(--navbar-animation-timme);
+    height: 28px;
+    margin-top: 6px;
+}
+
+.navbar .navbar-logo {
+    transition: 0.3s;
+}
+
+.navbar .navbar-title {
+    height: 20px;
+    margin-top: 8px;
 }

@@ -19,12 +19,4 @@
     .global-container .page-container {
         justify-items: unset;
     }
-
-    .navbar .navbar-mobile-menu {
-        display: unset;
-    }
-
-    .navbar .navbar-descktop-navlist {
-        display: none;
-    }
 }

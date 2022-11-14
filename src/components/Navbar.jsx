@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image";
 import MenuIcon from "../images/menuIcon.svg";
-import Style from "../styles/navbar.css"
+import Title from "../images/title.svg"
+import "../styles/navbar.css"
 import { useEffect } from 'react';
 
 
-const baseHeight = 64;
+
+const baseHeight = 44;
 
 export const NavDisplay = Object.freeze({
     collapsed: Symbol(),
@@ -14,7 +16,7 @@ export const NavDisplay = Object.freeze({
     expanded: Symbol()
 })
 
-export default function({ display }) {
+export default function({ display, mobileMode }) {
     
     const [forceExpanded, setForceExpanded] = useState(false);
 
@@ -24,22 +26,28 @@ export default function({ display }) {
         display = display ?? NavDisplay.normal;
     }
 
-    useEffect(() => console.log("reloaded navbar"));
+    useEffect(() => console.log(mobileMode))
 
     return (
         <nav
         className="navbar"
         style={{
-            padding: (display === NavDisplay.collapsed) ? "0 4% 20px 4%" : "0 4%" ,
+            padding: (display === NavDisplay.collapsed) ? "0 4% 20px 4%" : "12px 4%" ,
             top: (display === NavDisplay.collapsed) ? -baseHeight : "0",
-            height: (display === NavDisplay.expanded) ? 640 : 64
+            height: (display === NavDisplay.expanded) ? 640 : 40
         }}
-        >
-            <Link className='navbar-logo' to="/">
-                <StaticImage src='../images/logo.png' alt='logo' />
+        >   
+            {
+                mobileMode &&
+                <Fragment>
+                    <MenuIcon className="navbar-mobile-menu" onClick={() => setForceExpanded(true)} />
+                    <Title className="navbar-title" />
+                </Fragment>
+            }
+            <Link className='navbar-logo' to="/" style={(display === NavDisplay.collapsed) ? {"margin-top": -60} : {}}>
+                <StaticImage src='../images/logo.png' alt='logo' layout='constrained' height={92} />
             </Link>
-            <MenuIcon className="navbar-mobile-menu" onClick={() => setForceExpanded(true)} />
-            <ul className='navbar-descktop-navlist'>
+            <ul className='navbar-descktop-navlist' style={{display: mobileMode ? "none" : "flex"}}>
                 <li>
                     <Link to='/'>Inicio</Link>
                 </li>
