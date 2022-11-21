@@ -31,22 +31,22 @@ const NavbarBase = ({ className = "", children, display }) => (
     </nav>
 );
 
-const LinkList = () => (
+const LinkList = ({ onItemClick }) => (
     <ul className='navbar-linklist'>
         <li>
-            <Link to='/'>Inicio</Link>
+            <Link to='/' onClick={onItemClick}>Inicio</Link>
         </li>
         <li>
-            <Link to='/info'>Info</Link>
+            <Link to='/info' onClick={onItemClick}>Info</Link>
         </li>
         <li>
-            <Link to='/tutorials'>Tutoriales</Link>
+            <Link to='/tutorials' onClick={onItemClick}>Tutoriales</Link>
         </li>
         <li>
-            <Link to='/rules'>Reglas</Link>
+            <Link to='/rules' onClick={onItemClick}>Reglas</Link>
         </li>
         <li>
-            <Link to='/news'>Noticias</Link>
+            <Link to='/news' onClick={onItemClick}>Noticias</Link>
         </li>
     </ul>
 );
@@ -62,35 +62,54 @@ const DesktopNavbar = ({ display }) => (
     </NavbarBase>
 );
 
-const MobileNavbar = ({ display, onMenuClick }) => (
-    <NavbarBase className="mobile-navbar" display={display}>
-        <div style={{
+function MobileNavbar ({ display, onMenuClick, onItemClick }) {
 
-        }}> 
-            {
-                (display === NavDisplay.expanded)
-                ? <Arrow className="navbar-mobile-menu" onClick={onMenuClick} style={{
-                    height: 16,
-                    marginTop: 15,
-                    rotate: "90deg"
-                }} />
-                : <MenuIcon className="navbar-mobile-menu" onClick={onMenuClick} />
-            }
-            <Link className='navbar-logo' to="/" style={(display === NavDisplay.collapsed) ? {"margin-top": -60} : {}}>
-                <StaticImage src='../images/logo.png' alt='logo' layout='constrained' height={92} />
-            </Link>
-        </div>
-        <div style={{
-            overflow: 'hidden',
-            marginTop: _baseHeight,
-            height: `calc(100% - ${_baseHeight}px)`,
-            padding: (display === NavDisplay.expanded) ? 36 : 0,
-            display: (display === NavDisplay.collapsed) ? "none" : "flex"
-        }}>
-            <LinkList />
-        </div>
-    </NavbarBase>
-);
+    const expanded = display === NavDisplay.expanded;
+
+    document.body.style.overflow = (expanded) ? "hidden" : "auto";
+
+    return (
+    <Fragment>
+        {
+            expanded &&
+            <div style={{
+                position: "fixed",
+                height: "100vh",
+                width: "100vw",
+                backgroundColor: "rgba(87, 0, 38,.3)",
+                zIndex: 3
+            }} />
+        }
+        <NavbarBase className="mobile-navbar" display={display}>
+            <div style={{
+
+            }}> 
+                {
+                    (expanded)
+                    ? <Arrow className="navbar-mobile-menu" onClick={onMenuClick} style={{
+                        height: 16,
+                        marginTop: 15,
+                        rotate: "90deg"
+                    }} />
+                    : <MenuIcon className="navbar-mobile-menu" onClick={onMenuClick} />
+                }
+                <Link className='navbar-logo' to="/" style={(display === NavDisplay.collapsed) ? {"margin-top": -60} : {}}>
+                    <StaticImage src='../images/logo.png' alt='logo' layout='constrained' height={92} />
+                </Link>
+            </div>
+            <div style={{
+                overflow: 'hidden',
+                marginTop: _baseHeight,
+                height: `calc(100% - ${_baseHeight}px)`,
+                padding: (expanded) ? 36 : 0,
+                display: (display === NavDisplay.collapsed) ? "none" : "flex"
+            }}>
+                <LinkList onItemClick={onItemClick} />
+            </div>
+        </NavbarBase>
+    </Fragment>
+    );
+}
 
 export default function({ display, mobileMode }) {
     
@@ -103,7 +122,11 @@ export default function({ display, mobileMode }) {
 
     return (
         mobileMode
-        ? <MobileNavbar display={display} onMenuClick={() => setForceExpanded(!forceExpanded)} />
+        ? <MobileNavbar
+        display={display}
+        onMenuClick={() => setForceExpanded(!forceExpanded)}
+        onItemClick={() => setForceExpanded(false)}
+        />
         : <DesktopNavbar display={display} />
     )
 }
