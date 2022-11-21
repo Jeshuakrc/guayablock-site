@@ -1,6 +1,7 @@
 .page {
     display: grid;
-    grid-template-columns: min(calc(1200px + 10vw), 100%);
+    
+    width: min(calc(1200px + 10vw), 100%);
     grid-template-rows: max-content auto;
     justify-items: center;
 }
