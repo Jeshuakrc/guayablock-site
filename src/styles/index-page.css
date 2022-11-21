@@ -39,8 +39,14 @@
 }
 
 @media(max-width: 1700px) {
+    .index-page .title > img {
+        width: 25%;
+        margin-left: 32px;
+    }
+
     .index-page .title h1 {
         font-size: 30px;
+        margin-right: 48px;
     }
 }
 

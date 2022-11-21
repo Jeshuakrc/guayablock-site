@@ -15,7 +15,7 @@ export const NavDisplay = Object.freeze({
 
 //Constant values
 const _baseHeight = 64;
-const _expandedHeight = 400;
+const _expandedHeight = 380;
 
 //Private components
 const NavbarBase = ({ className = "", children, display }) => (
@@ -52,7 +52,7 @@ const LinkList = ({ onItemClick }) => (
 );
 
 const DesktopNavbar = ({ display }) => (
-    <NavbarBase display={display}>
+    <NavbarBase className='desktop-navbar' display={display}>
         <div>
             <Link className='navbar-logo' to="/" style={(display === NavDisplay.collapsed) ? {"margin-top": -60} : {}}>
                 <StaticImage src='../images/logo.png' alt='logo' layout='constrained' height={92} />
@@ -63,9 +63,7 @@ const DesktopNavbar = ({ display }) => (
 );
 
 function MobileNavbar ({ display, onMenuClick, onItemClick }) {
-
     const expanded = display === NavDisplay.expanded;
-
     document.body.style.overflow = (expanded) ? "hidden" : "auto";
 
     return (
@@ -114,7 +112,7 @@ function MobileNavbar ({ display, onMenuClick, onItemClick }) {
 export default function({ display, mobileMode }) {
     
     const [forceExpanded, setForceExpanded] = useState(false);
-    if (forceExpanded) {
+    if (forceExpanded && mobileMode) {
         display = NavDisplay.expanded;
     } else {
         display = display ?? NavDisplay.normal;

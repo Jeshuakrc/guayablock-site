@@ -14,9 +14,3 @@
     min-height: calc(100vh - var(--navbar-height-collapsed));
     justify-items: center;
 }
-
-@media (max-width: 800px) {
-    .global-container .page-container {
-        justify-items: unset;
-    }
-}
