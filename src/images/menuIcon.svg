@@ -10,7 +10,7 @@
       }
     </style>
   </defs>
-  <polyline stroke="currentcolor" class="menu-line" points="60 10 90 10" />
-  <polyline stroke="currentcolor" class="menu-line" points="35 50 90 50" />
+  <polyline stroke="currentcolor" class="menu-line" points="10 10 40 10" />
+  <polyline stroke="currentcolor" class="menu-line" points="10 50 65 50" />
   <polyline stroke="currentcolor" class="menu-line" points="10 90 90 90" />
 </svg>

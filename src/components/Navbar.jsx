@@ -2,13 +2,10 @@ import React, { Fragment, useState } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image";
 import MenuIcon from "../images/menuIcon.svg";
+import Arrow from "../images/arrow.svg";
 import Title from "../images/title.svg"
 import "../styles/navbar.css"
-import { useEffect } from 'react';
 
-
-
-const baseHeight = 44;
 
 export const NavDisplay = Object.freeze({
     collapsed: Symbol(),
@@ -16,54 +13,97 @@ export const NavDisplay = Object.freeze({
     expanded: Symbol()
 })
 
+//Constant values
+const _baseHeight = 64;
+const _expandedHeight = 400;
+
+//Private components
+const NavbarBase = ({ className = "", children, display }) => (
+    <nav
+    className={`navbar ${className}`}
+    style={{
+        paddingBottom: (display === NavDisplay.collapsed) ? "20px" : "0" ,
+        top: (display === NavDisplay.collapsed) ? -_baseHeight : "0",
+        height: (display === NavDisplay.expanded) ? _expandedHeight : _baseHeight,
+    }}
+    >   
+        { children }
+    </nav>
+);
+
+const LinkList = () => (
+    <ul className='navbar-linklist'>
+        <li>
+            <Link to='/'>Inicio</Link>
+        </li>
+        <li>
+            <Link to='/info'>Info</Link>
+        </li>
+        <li>
+            <Link to='/tutorials'>Tutoriales</Link>
+        </li>
+        <li>
+            <Link to='/rules'>Reglas</Link>
+        </li>
+        <li>
+            <Link to='/news'>Noticias</Link>
+        </li>
+    </ul>
+);
+
+const DesktopNavbar = ({ display }) => (
+    <NavbarBase display={display}>
+        <div>
+            <Link className='navbar-logo' to="/" style={(display === NavDisplay.collapsed) ? {"margin-top": -60} : {}}>
+                <StaticImage src='../images/logo.png' alt='logo' layout='constrained' height={92} />
+            </Link>
+            <LinkList />
+        </div>
+    </NavbarBase>
+);
+
+const MobileNavbar = ({ display, onMenuClick }) => (
+    <NavbarBase className="mobile-navbar" display={display}>
+        <div style={{
+
+        }}> 
+            {
+                (display === NavDisplay.expanded)
+                ? <Arrow className="navbar-mobile-menu" onClick={onMenuClick} style={{
+                    height: 16,
+                    marginTop: 15,
+                    rotate: "90deg"
+                }} />
+                : <MenuIcon className="navbar-mobile-menu" onClick={onMenuClick} />
+            }
+            <Link className='navbar-logo' to="/" style={(display === NavDisplay.collapsed) ? {"margin-top": -60} : {}}>
+                <StaticImage src='../images/logo.png' alt='logo' layout='constrained' height={92} />
+            </Link>
+        </div>
+        <div style={{
+            overflow: 'hidden',
+            marginTop: _baseHeight,
+            height: `calc(100% - ${_baseHeight}px)`,
+            padding: (display === NavDisplay.expanded) ? 36 : 0,
+            display: (display === NavDisplay.collapsed) ? "none" : "flex"
+        }}>
+            <LinkList />
+        </div>
+    </NavbarBase>
+);
+
 export default function({ display, mobileMode }) {
     
     const [forceExpanded, setForceExpanded] = useState(false);
-
     if (forceExpanded) {
         display = NavDisplay.expanded;
     } else {
         display = display ?? NavDisplay.normal;
     }
 
-    useEffect(() => console.log(mobileMode))
-
     return (
-        <nav
-        className="navbar"
-        style={{
-            padding: (display === NavDisplay.collapsed) ? "0 4% 20px 4%" : "12px 4%" ,
-            top: (display === NavDisplay.collapsed) ? -baseHeight : "0",
-            height: (display === NavDisplay.expanded) ? 640 : 40
-        }}
-        >   
-            {
-                mobileMode &&
-                <Fragment>
-                    <MenuIcon className="navbar-mobile-menu" onClick={() => setForceExpanded(true)} />
-                    <Title className="navbar-title" />
-                </Fragment>
-            }
-            <Link className='navbar-logo' to="/" style={(display === NavDisplay.collapsed) ? {"margin-top": -60} : {}}>
-                <StaticImage src='../images/logo.png' alt='logo' layout='constrained' height={92} />
-            </Link>
-            <ul className='navbar-descktop-navlist' style={{display: mobileMode ? "none" : "flex"}}>
-                <li>
-                    <Link to='/'>Inicio</Link>
-                </li>
-                <li>
-                    <Link to='/info'>Info</Link>
-                </li>
-                <li>
-                    <Link to='/tutorials'>Tutoriales</Link>
-                </li>
-                <li>
-                    <Link to='/rules'>Reglas</Link>
-                </li>
-                <li>
-                    <Link to='/news'>Noticias</Link>
-                </li>
-            </ul>
-        </nav>
-    );
+        mobileMode
+        ? <MobileNavbar display={display} onMenuClick={() => setForceExpanded(!forceExpanded)} />
+        : <DesktopNavbar display={display} />
+    )
 }

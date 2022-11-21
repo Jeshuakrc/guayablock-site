@@ -2,32 +2,42 @@
     position: fixed;
     z-index: 5;
     top:0;
-    display: flex;
-    justify-content: space-between;
     margin: 0;
-    padding: 0 4%;
     background-color: var(--layout-color);
     height: var(--navbar-height);
     font-size: 24px;
-    width: calc(100vw - 8%);
+    width: 100vw;
     transition: var(--navbar-animation-timme);
     transition-property: height, padding, top;
 }
 
-.navbar .navbar-descktop-navlist {
+.navbar > div {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 12px 4%;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.navbar .navbar-linklist {
     margin: 0;
     display: flex;
     flex-direction: row;
     list-style: none;
     transition: var(--navbar-animation-timme);
+    padding: 0;
 }
 
-.navbar .navbar-descktop-navlist li {
+.navbar .navbar-linklist li {
     display: grid;
     align-items: center;
 }
 
-.navbar .navbar-descktop-navlist li a {
+.navbar .navbar-linklist li a {
     text-decoration: none;
     color: var(--layout-text-color);
     height: 100%;
@@ -36,19 +46,28 @@
     padding: 0 16px;
 }
 
-.navbar .navbar-descktop-navlist li:nth-child(1) {
+.navbar .navbar-linklist li:nth-child(1) {
     margin-right: 16px;
     padding-right: 16px;
     border-right: 2px solid rgba(0, 0, 0, .3);
 }
-.navbar .navbar-descktop-navlist li a:hover {
+.navbar .navbar-linklist li a:hover {
     background-color: var(--layout-enphasis-color);
+}
+
+.mobile-navbar .navbar-linklist{
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    font-size: 32px;
 }
 
 .navbar .navbar-mobile-menu {
     color: var(--bammer-border-color);
     height: 28px;
     margin-top: 6px;
+    z-index: 2;
+    cursor: pointer;
 }
 
 .navbar .navbar-logo {
