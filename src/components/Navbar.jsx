@@ -5,6 +5,8 @@ import MenuIcon from "../images/menuIcon.svg";
 import Arrow from "../images/arrow.svg";
 import Title from "../images/title.svg"
 import "../styles/navbar.css"
+import { useRef } from 'react';
+import { useEffect } from 'react';
 
 
 export const NavDisplay = Object.freeze({
@@ -64,7 +66,16 @@ const DesktopNavbar = ({ display }) => (
 
 function MobileNavbar ({ display, onMenuClick, onItemClick }) {
     const expanded = display === NavDisplay.expanded;
+    const collapsed = display === NavDisplay.collapsed;
     document.body.style.overflow = (expanded) ? "hidden" : "auto";
+    const navList = useRef(null);
+    useEffect(() => {
+        if (expanded) {
+            navList.current.style.display = "flex";
+        } else if (collapsed) {
+            navList.current.style.display = "none";
+        }
+    })
 
     return (
     <Fragment>
@@ -99,9 +110,10 @@ function MobileNavbar ({ display, onMenuClick, onItemClick }) {
                 overflow: 'hidden',
                 marginTop: _baseHeight,
                 height: `calc(100% - ${_baseHeight}px)`,
-                padding: (expanded) ? 36 : 0,
-                display: (display === NavDisplay.collapsed) ? "none" : "flex"
-            }}>
+                padding: (expanded) ? 36 : 0
+            }}
+            ref={navList}
+            >
                 <LinkList onItemClick={onItemClick} />
             </div>
         </NavbarBase>
